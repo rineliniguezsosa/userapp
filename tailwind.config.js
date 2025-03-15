@@ -8,7 +8,9 @@ export default {
     theme: {
       extend: {
         colors:{
-         rojo:'#eb4536'
+         rojo:'#eb4536',
+         black: '#212121',
+         white: '#ffffff'
         },
       },
     },
