@@ -35,21 +35,6 @@ Users should be able to:
 
 ### Screenshot
 
-Desktop
-![](./src/assets/screenshots/desktop-home.png)
-
-Desktop - detail 
-
-![](./src/assets/screenshots/desktop-detail.png)
-
-Mobile
-![](./src/assets/screenshots/mobil-home.png)
-
-Mobile - detail
-![](./src/assets/screenshots/mobil-detail.png)
-
-Mobile - detail darkmode
-![](./src/assets/screenshots/mobile-detaildm.png)
 
 ### Links
 
@@ -69,7 +54,20 @@ Mobile - detail darkmode
 ### What I learned
 ### Notes
 
+El hook **useLocation** de React Router se usa para obtener información sobre la URL actual, incluyendo la ruta, query params y estado de navegación.
 
+```tsx
+import { useLocation } from "react-router-dom";
+
+const MyComponent = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+
+  console.log(queryParams.get("category")); // "electronics"
+  
+  return <p>Categoría: {queryParams.get("category")}</p>;
+};
+```
 
 ### Continued development
 
