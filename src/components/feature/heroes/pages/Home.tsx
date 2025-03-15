@@ -1,9 +1,15 @@
+import { useEffect } from "react"
 
 
 export const Home = () => {
+
+  useEffect(()=>{
+
+  },[])
+  
   return (
     <div className="w-full h-screen border-2 flex border-blue-600">
-        {/* contenido de mi api, lista de heroes */}
+        {/* contenido de mi api, lista de usuarios  */}
         <div className="w-3/5 border-2 border-red-500">
 
         </div>
