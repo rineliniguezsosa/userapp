@@ -6,9 +6,24 @@ export interface MuiPaperProps {
 }
 
 export interface MuiDataTaBleProps {
-
+    columns:Columns
 }
 
+export interface Columns {
+    field:string,
+    headerName:string,
+    width:number
+}
+export interface Usuario {
+    gender:     string;
+    name:       Name;
+    location:   Location;
+    email:      string;
+    cell:       string;
+    id:         ID;
+    picture:    Picture;
+    nat:        string;
+}
 export interface UsuarioRequest {
     results: Result[];
     info:    Info;
