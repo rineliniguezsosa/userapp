@@ -1,7 +1,9 @@
 import { useEffect,useState } from "react"
 import axios from 'axios';
 import { Usuario } from "../../../../types/interfaces";
+import { MuiPaper } from "../../../MuiComponents";
 const getall = import.meta.env.VITE_GETALL;
+
 
 
 
@@ -29,7 +31,9 @@ export const Home = () => {
     <div className="w-full h-screen border-2 flex border-blue-600">
         {/* contenido de mi api, lista de usuarios  */}
         <div className="w-3/5 border-2 border-red-500">
-
+            <MuiPaper height={400} width={'100%'}>
+              <h1>hola</h1>
+            </MuiPaper>
         </div>
 
         <div className="w-2/5 border-2 border-red-500">
