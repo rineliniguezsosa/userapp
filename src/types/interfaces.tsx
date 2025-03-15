@@ -1,3 +1,4 @@
+import { GridColDef } from "@mui/x-data-grid";
 import React from "react"
 export interface MuiPaperProps {
     height:number,
@@ -6,14 +7,9 @@ export interface MuiPaperProps {
 }
 
 export interface MuiDataTaBleProps {
-    columns:Columns[]
+    columns:GridColDef[]
 }
 
-export interface Columns {
-    field:string,
-    headerName:string,
-    width:number
-}
 export interface Usuario {
     gender:     string;
     name:       Name;
