@@ -6,10 +6,12 @@ import { Nav } from "../components/layout/nav/Nav"
 export const HeroesRouter = () => {
   return (
     <BrowserRouter>
-        <Nav/>
-        <Routes>
-            <Route path="/" Component={Home}></Route>
-        </Routes>
+        <main>
+            <Nav/>
+            <Routes>
+                <Route path="/" Component={Home}></Route>
+            </Routes>
+        </main>
     </BrowserRouter>
   )
 }
