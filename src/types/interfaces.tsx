@@ -6,7 +6,7 @@ export interface MuiPaperProps {
 }
 
 export interface MuiDataTaBleProps {
-    columns:Columns
+    columns:Columns[]
 }
 
 export interface Columns {
