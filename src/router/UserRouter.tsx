@@ -4,7 +4,7 @@ import { Nav } from "../components/layout/nav/Nav"
 import { UpdateHeroes } from "../components/feature/heroes/pages/UpdateUsuarios"
 
 
-export const HeroesRouter = () => {
+export const UserRouter = () => {
   return (
     <BrowserRouter>
         <main>
