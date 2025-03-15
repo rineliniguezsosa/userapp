@@ -1,4 +1,4 @@
-import { BrowserRouter,Routes,Route } from "react-router-dom"
+import { BrowserRouter,Routes,Route,Navigate } from "react-router-dom"
 import { Home } from "../components/feature/heroes/pages/Home"
 import { Nav } from "../components/layout/nav/Nav"
 
@@ -9,7 +9,9 @@ export const HeroesRouter = () => {
         <main>
             <Nav/>
             <Routes>
-                <Route path="/" Component={Home}></Route>
+                <Route path="/" element={<Home/>}></Route>
+
+                <Route path="/*" element={<Navigate to="/"/>}></Route>
             </Routes>
         </main>
     </BrowserRouter>
