@@ -1,12 +1,12 @@
 
-import { HeroesRouter } from './router/HeroesRouter'
+import { UserRouter } from './router/UserRouter'
 
 function App() {
   
 
   return (
     <>
-      <HeroesRouter/>
+      <UserRouter/>
     </>
   )
 }
