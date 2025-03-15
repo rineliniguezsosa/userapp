@@ -2,14 +2,14 @@
 
 export const Home = () => {
   return (
-    <div className="w-full h-screen border-2 border-blue-600">
+    <div className="w-full h-screen border-2 flex border-blue-600">
         {/* contenido de mi api, lista de heroes */}
-        <div className="w-4/5 border-2 border-red-500">
+        <div className="w-3/5 border-2 border-red-500">
 
         </div>
 
-        {/* form,agregar nuevas items */}
-        <div className="w-1/5 border-2 border-red-500">
+        <div className="w-2/5 border-2 border-red-500">
+          {/* form,agregar nuevas items */}
 
         </div>
     </div>
