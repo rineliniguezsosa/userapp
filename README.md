@@ -69,6 +69,9 @@ const MyComponent = () => {
 };
 ```
 
+[Documentación del Data table](https://mui.com/material-ui/react-table/)
+
+
 ### Continued development
 
 - full stack technologies
