@@ -1,6 +1,7 @@
 import { BrowserRouter,Routes,Route,Navigate } from "react-router-dom"
 import { Home } from "../components/feature/heroes/pages/Home"
 import { Nav } from "../components/layout/nav/Nav"
+import { UpdateHeroes } from "../components/feature/heroes/pages/UpdateHeroes"
 
 
 export const HeroesRouter = () => {
@@ -10,6 +11,7 @@ export const HeroesRouter = () => {
             <Nav/>
             <Routes>
                 <Route path="/" element={<Home/>}></Route>
+                <Route path="/edit/heroe" element={<UpdateHeroes />}></Route>
 
                 <Route path="/*" element={<Navigate to="/"/>}></Route>
             </Routes>
