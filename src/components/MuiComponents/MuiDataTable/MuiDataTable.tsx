@@ -1,9 +1,11 @@
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { MuiDataTaBleProps } from '../../../types/interfaces';
 
-export const MuiDataTable = () => {
+export const MuiDataTable = ({columns,...props}:MuiDataTaBleProps) => {
   return (
     <DataGrid
-    
+       columns={columns}
+       {...props}
     />
   )
 }
