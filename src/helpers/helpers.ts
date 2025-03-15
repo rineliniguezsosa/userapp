@@ -6,5 +6,15 @@ export const columns: GridColDef[] = [
     },
     {
         field:'name', headerName: 'Name',width:70
-    }
+    },
+    {
+        field:'genero', headerName: 'Genero',width:70
+    },
+    {
+        field:'email', headerName: 'email',width:70
+    },
+    {
+        field:'nat', headerName: 'Nacionalidad',width:70
+    },
+    
 ]
