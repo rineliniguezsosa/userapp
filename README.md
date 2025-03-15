@@ -1,6 +1,6 @@
-# Frontend Mentor - REST Countries API with color theme switcher solution
+# Marvelapp
 
-This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/solutions/rest-countries-api-with-color-theme-switcher-d1mEtcU-IT). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+Esta es la solución y el proceso de el desafio 
 
 ## Table of contents
 
@@ -63,33 +63,13 @@ Mobile - detail darkmode
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 
 
 ### What I learned
 ### Notes
 
-component typing
 
-```tsx
-sx?:SxProps<Theme>
-```
-Explanation:
-
-- SxProps: It is a generic type that accepts a theme (Theme) as an argument. This type allows you to specify a set of style rules that can be applied to a component.
-
-- Theme: The Theme type refers to the Material UI theme that defines the general appearance of the application (colors, fonts, spacing, etc.). If you're using a custom theme, you can extend the default Material UI theme to include your own styles.
-
-MenuProps is a property that can be passed to a Select component
-
-```tsx
- MenuProps?: Partial<MenuProps>,
-```
-
-- MenuProps: is a property that can be passed to a component (such as an MUI Select) to customize the behavior and appearance of the drop-down menu that is displayed when the user interacts with the component.
-
-- Partial<MenuProps> indicates that if you decide to pass MenuProps, you can specify only some of the properties of the MenuProps type.
 
 ### Continued development
 
@@ -103,7 +83,7 @@ MenuProps is a property that can be passed to a Select component
 
 ## Author
 
-- Frontend Mentor - [@rineliniguezsosa](https://www.frontendmentor.io/profile/rineliniguezsosa)
+- Rinel iñiguez sosa
 
 
 ## Requirements 
@@ -121,13 +101,13 @@ Follow these steps to download and run the project locally
   Open your terminal and run the following command:
 
    ```bash
-   git clone https://github.com/rineliniguezsosa/appcountries.git
+   git clone https://github.com/rineliniguezsosa/Marvelapp.git
    ```
 
 2.- **Navigate to the project directory:**
 
 ```bash
-cd appcountries
+cd marvelapp
 ```
 
 3.-**Open the project in Visual Studio Code:**
