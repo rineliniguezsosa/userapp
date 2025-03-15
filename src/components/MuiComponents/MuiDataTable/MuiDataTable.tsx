@@ -1,7 +1,9 @@
-
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 export const MuiDataTable = () => {
   return (
-    <div>MuiDataTable</div>
+    <DataGrid
+    
+    />
   )
 }
