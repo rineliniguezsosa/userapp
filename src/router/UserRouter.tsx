@@ -1,7 +1,7 @@
 import { BrowserRouter,Routes,Route,Navigate } from "react-router-dom"
 import { Home } from "../components/feature/heroes/pages/Home"
 import { Nav } from "../components/layout/nav/Nav"
-import { UpdateHeroes } from "../components/feature/heroes/pages/UpdateHeroes"
+import { UpdateHeroes } from "../components/feature/heroes/pages/UpdateUsuarios"
 
 
 export const HeroesRouter = () => {
