@@ -30,7 +30,7 @@ export const Home = () => {
   return (
     <div className="w-full h-screen border-2 flex border-blue-600">
         {/* contenido de mi api, lista de usuarios  */}
-        <div className="w-3/5 border-2 border-red-500">
+        <div className="w-3/5 border-2 border-red-500 p-5">
             <MuiPaper height={400} width={'100%'}>
               <MuiDataTable
                 columns={columns}
