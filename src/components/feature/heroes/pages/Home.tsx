@@ -1,17 +1,17 @@
 import { useEffect,useState } from "react"
 import axios from 'axios';
-import { UsuarioRequest } from "../../../../types/interfaces";
+import { Usuario } from "../../../../types/interfaces";
 const getall = import.meta.env.VITE_GETALL;
 
 
 
 export const Home = () => {
-  const [userdata, setUserData] = useState<UsuarioRequest | []>([])
+  const [userdata, setUserData] = useState<Usuario | []>([])
   console.log(userdata);
   
   const getUsers = async() =>{
     try {
-      const req = await axios.get<UsuarioRequest>(getall);
+      const req = await axios.get<Usuario>(getall);
       const resp = await req.data;
       console.log(resp);
       setUserData(resp)
