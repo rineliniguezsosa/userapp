@@ -12,7 +12,7 @@ const getall = import.meta.env.VITE_GETALL;
 export const Home = () => {
   const [userdata, setUserData] = useState<Usuario[]>([])
 
-  const {handleChange} = useForm({
+  const {form,handleChange} = useForm({
     name:''
   })
   
@@ -74,8 +74,10 @@ export const Home = () => {
               <MuiTextField
               id="name"
               label="Nombre" 
-              value={""}  
-              onChange={handleChange}            />
+              name="name"
+              value={form.name}  
+              onChange={handleChange}            
+              />
             </MuiForm>
           </div>
 
