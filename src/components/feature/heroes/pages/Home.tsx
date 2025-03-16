@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Usuario } from "../../../../types/interfaces";
 import { MuiButton,MuiDataTable,MuiPaper,MuiTextField,MuiForm } from "../../../MuiComponents";
 import { columns } from "../../../../helpers";
+import { useForm } from "../../../../hooks";
 
 const getall = import.meta.env.VITE_GETALL;
 
@@ -10,6 +11,10 @@ const getall = import.meta.env.VITE_GETALL;
 
 export const Home = () => {
   const [userdata, setUserData] = useState<Usuario[]>([])
+
+  const {handleChange} = useForm({
+    name:''
+  })
   
   const getUsers = async() =>{
     try {
@@ -69,7 +74,8 @@ export const Home = () => {
               <MuiTextField
               id="name"
               label="Nombre" 
-              value={""}              />
+              value={""}  
+              onChange={handleChange}            />
             </MuiForm>
           </div>
 
