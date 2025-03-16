@@ -68,7 +68,14 @@ export const columns: GridColDef[] = [
                 </MuiButton>
 
                 <MuiModal open={open} onClose={handleClose}>
-                    <h1>Hola</h1>
+                    <div className=''>
+                        <h1>¿Estás seguro de que deseas eliminar este registro? </h1>
+
+                        <div className='mt-5'>
+                            <MuiButton  variant='contained' color='success' sizes='small'>Aceptar</MuiButton>
+                            <MuiButton onClick={handleClose}  variant='contained' color='error' sizes='small'>Cancelar</MuiButton>
+                        </div>
+                    </div>
                 </MuiModal>
             </React.Fragment>
           );
