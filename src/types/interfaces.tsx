@@ -9,8 +9,9 @@ export interface MuiPaperProps {
 export interface MuiTextFieldProps {
     id:string,
     label:string,
+    name:string,
     value:string,
-    onChange: ()=> void
+    onChange: (e:React.ChangeEvent<HTMLInputElement>)=> void
 }
 export interface MuiFormProps {
     children:React.ReactNode,
