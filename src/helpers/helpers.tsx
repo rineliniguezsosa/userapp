@@ -45,6 +45,7 @@ export const columns: GridColDef[] = [
         width: 150,
         renderCell: (params) => {
           const [open, setopen] = useState(false);
+          const [loading, setloading] = useState(false);
             console.log("params",params);
     
 
@@ -57,7 +58,7 @@ export const columns: GridColDef[] = [
           }
 
           const deleteUser = async() =>{
-
+          
           }
     
           return (
@@ -76,7 +77,7 @@ export const columns: GridColDef[] = [
                         <h1>¿Estás seguro de que deseas eliminar este registro? </h1>
 
                         <div className='mt-5 flex justify-between'>
-                            <MuiButton onClick={deleteUser}  variant='contained' color='success' sizes='small'>Aceptar</MuiButton>
+                            <MuiButton loading={loading} onClick={deleteUser}  variant='contained' color='success' sizes='small'>Aceptar</MuiButton>
                             <MuiButton onClick={handleClose}  variant='contained' color='error' sizes='small'>Cancelar</MuiButton>
                         </div>
                     </div>
