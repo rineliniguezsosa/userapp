@@ -10,7 +10,6 @@ export interface MuiTextFieldProps {
     id:string,
     label:string,
     value:string,
-    variant:string
 }
 export interface MuiFormProps {
     children:React.ReactNode,
