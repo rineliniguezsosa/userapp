@@ -1,9 +1,10 @@
 import { Box } from '@mui/material';
+import { MuiFormProps } from '../../../types/interfaces';
 
-export const MuiForm = () => {
+export const MuiForm = ({children,onSubmit,...props}:MuiFormProps) => {
   return (
-    <Box component="form" autoComplete='off'>
-
+    <Box onSubmit={onSubmit} component="form" autoComplete='off' {...props}>
+        {children}
     </Box>
   )
 }
