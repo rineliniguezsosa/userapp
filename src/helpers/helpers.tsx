@@ -47,7 +47,7 @@ export const columns: GridColDef[] = [
         renderCell: (params) => {
           const [open, setopen] = useState(false);
           const [loading, setloading] = useState(false);
-            console.log("params",params);
+            // console.log("params",params);
     
 
           const handleOpen = () =>{
@@ -62,15 +62,10 @@ export const columns: GridColDef[] = [
             setloading(true);
             setTimeout(async()=>{
               try {
-  
-                  const req = await axios.delete(`${deleteuser}/${params.row._id}`);
-                  console.log(req);
-              
+                  await axios.delete(`${deleteuser}/${params.row._id}`);
                   handleClose()
-                 
               } catch (error) {
                 console.log(error);
-                
               }
             },1500)
           }
