@@ -24,9 +24,10 @@ export const Home = () => {
   // const paginationModel = { page: 0, pageSize: 5 };
   
    console.log(userdata);
-   const rows = userdata.map((user: Usuario, index) => ({
+   const rows = userdata.map((user: Usuario, index) => ({     
     id: index,
-    genre: user.gender,
+    _id: user._id,
+    gender: user.gender,
     name: user.name,
     streetNumber:user.location.street.number || "",
     streetName: user.location.street.name || "",
