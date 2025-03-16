@@ -82,7 +82,7 @@ export const columns: GridColDef[] = [
         },
       },
     {
-        field: "action",
+        field: "actionupdate",
         headerName: "Actualizar",
         width: 150,
         renderCell: (params) => {
