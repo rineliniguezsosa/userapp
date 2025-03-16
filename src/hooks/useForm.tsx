@@ -9,15 +9,12 @@ export const useForm = <T extends FormState<string>>(initialForm:T) =>{
     const [form, setform] = useState(initialForm)
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) =>{
-        console.log(e);
         const {name,value} = e.target
-        console.log(name,value);
+
         setform( prevState => ({
             ...prevState,
             [name]:value
         }))
-        
-        
     }
     
     return {
