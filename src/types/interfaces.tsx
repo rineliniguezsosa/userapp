@@ -6,6 +6,10 @@ export interface MuiPaperProps {
     children: React.ReactNode
 }
 
+export interface MuiFormProps {
+    children:React.ReactNode,
+    onSubmit:()=> void
+}
 export interface MuiModalProps {
     open:boolean,
     onClose:()=> void,
