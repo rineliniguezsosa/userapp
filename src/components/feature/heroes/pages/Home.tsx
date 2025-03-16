@@ -67,7 +67,7 @@ export const Home = () => {
           <div className="">
             <MuiForm action="">
               <MuiTextField></MuiTextField>
-            </Mui>
+            </MuiForm>
           </div>
 
         </div>
