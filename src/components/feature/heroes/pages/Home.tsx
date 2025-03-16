@@ -65,8 +65,11 @@ export const Home = () => {
           </MuiButton>
 
           <div className="">
-            <MuiForm action="">
-              <MuiTextField></MuiTextField>
+            <MuiForm onSubmit={()=>{}}>
+              <MuiTextField
+              id="name"
+              label="Nombre" 
+              value={""}              />
             </MuiForm>
           </div>
 
