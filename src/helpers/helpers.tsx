@@ -58,15 +58,21 @@ export const columns: GridColDef[] = [
             setopen(false);
           }
 
-          const deleteUser = async() =>{
-            try {
-              const req = await axios.delete(deleteuser);
-              console.log(req);
+          const deleteUser = () =>{
+            setloading(true);
+            setTimeout(async()=>{
+              try {
+  
+                  const req = await axios.delete(`${deleteuser}/${params.row._id}`);
+                  console.log(req);
               
-            } catch (error) {
-              console.log(error);
-              
-            }
+                  handleClose()
+                 
+              } catch (error) {
+                console.log(error);
+                
+              }
+            },1500)
           }
     
           return (
