@@ -53,7 +53,6 @@ export const Home = () => {
               <MuiDataTable
                 rows={rows}
                 columns={columns}
-                checkboxSelection
               />
             </MuiPaper>
         </div>
