@@ -8,40 +8,36 @@ const getall = import.meta.env.VITE_GETALL;
 
 
 export const Home = () => {
-  const [userdata, setUserData] = useState<Usuario[] | []>([])
-  console.log(userdata);
+  const [userdata, setUserData] = useState<Usuario[]>([])
   
   const getUsers = async() =>{
     try {
-      const req = await axios.get<Usuario>(getall);
-      const resp = await req.data;
-      console.log(resp);
-      setUserData(resp);
+      const { data } = await axios.get<{status: boolean,data:Usuario[]}>(getall); 
+      setUserData(data.data);
+      console.log(data.data);
     } catch (error) {
       console.log(error);
       
     }
   }
-
+  
   // const paginationModel = { page: 0, pageSize: 5 };
- 
-   const rows = userdata.map((user)=>({
-      genre: user.gender,
-      name: user.name,
-      location: {
-        street:{
-          number: user.location?.street.number,
-          name: user.location?.street.name
-        },
-        city: user.location?.city,
-        state: user.location?.state,
-        country: user.location?.country,
-        postcode: user.location?.postcode
-      },
-      email:user.email,
-      nat:user.nat
-   }))
-   console.log(rows);
+  
+   console.log(userdata);
+   const rows = userdata.map((user: Usuario, index) => ({
+    id: index,
+    genre: user.gender,
+    name: user.name,
+    streetNumber:user.location?.street?.number || "",
+    streetName: user.location?.street?.name || "",
+    streetCity: user.location?.city || "",
+    streetState: user.location?.state || "",
+    streetCountry:  user.location?.country || "",
+    stretPostcode: user.location?.postcode || "",
+    email: user.email || "",
+    nat: user.nat || "",
+  }));
+    console.log("rows: ",rows);
    
 
    
