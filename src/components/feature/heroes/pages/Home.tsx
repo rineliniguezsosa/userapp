@@ -1,7 +1,7 @@
 import { useEffect,useState } from "react"
 import axios from 'axios';
 import { Usuario } from "../../../../types/interfaces";
-import { MuiDataTable, MuiPaper } from "../../../MuiComponents";
+import { MuiButton, MuiDataTable, MuiPaper } from "../../../MuiComponents";
 import { columns } from "../../../../helpers";
 const getall = import.meta.env.VITE_GETALL;
 
@@ -59,6 +59,15 @@ export const Home = () => {
 
         <div className="w-2/5 border-2 border-red-500">
           {/* form,agregar nuevas items */}
+          <MuiButton variant="contained" color="success" sizes="medium">
+            Agregar
+          </MuiButton>
+
+          <div>
+            <form action="">
+              <input type="text" id="name" value="" />
+            </form>
+          </div>
 
         </div>
     </div>
