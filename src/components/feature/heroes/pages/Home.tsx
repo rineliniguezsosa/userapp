@@ -1,9 +1,9 @@
 import { useEffect,useState } from "react"
 import axios from 'axios';
 import { Usuario } from "../../../../types/interfaces";
-import { MuiButton, MuiDataTable, MuiPaper } from "../../../MuiComponents";
+import { MuiButton,MuiDataTable,MuiPaper,MuiTextField,MuiForm } from "../../../MuiComponents";
 import { columns } from "../../../../helpers";
-import { MuiForm } from "../../../MuiComponents";
+
 const getall = import.meta.env.VITE_GETALL;
 
 
@@ -66,7 +66,7 @@ export const Home = () => {
 
           <div className="">
             <MuiForm action="">
-              <input type="text" id="name" value="" />
+              <MuiTextField></MuiTextField>
             </Mui>
           </div>
 
