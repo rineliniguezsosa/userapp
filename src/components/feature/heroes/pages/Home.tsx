@@ -64,7 +64,7 @@ export const Home = () => {
             Agregar
           </MuiButton>
 
-          <div className="">
+          <div className="mt-5">
             <MuiForm onSubmit={()=>{}}>
               <MuiTextField
               id="name"
