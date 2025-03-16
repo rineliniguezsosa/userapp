@@ -9,6 +9,7 @@ export interface MuiPaperProps {
 export interface MuiModalProps {
     open:boolean,
     onClose:()=> void,
+    children:React.ReactNode
 }
 export interface MuiButtonProps {
     variant: 'text' | 'contained' | 'outlined',
