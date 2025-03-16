@@ -9,14 +9,13 @@ export interface MuiPaperProps {
 export interface MuiModalProps {
     open:boolean,
     onClose:()=> void,
-    chidlren: React.ReactNode
 }
 export interface MuiButtonProps {
     variant: 'text' | 'contained' | 'outlined',
     sizes: 'small'|'large'|'medium',
     color: 'success' | 'error',
     onClick:()=> void,
-    title: string
+    children: React.ReactNode
 }
 
 export interface MuiDataTaBleProps {
