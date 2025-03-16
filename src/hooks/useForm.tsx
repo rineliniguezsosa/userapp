@@ -14,6 +14,7 @@ export const useForm = <T extends FormState<string>>(initialForm:T) =>{
     }
     
     return {
+        form,
         handleChange
     }
 }
