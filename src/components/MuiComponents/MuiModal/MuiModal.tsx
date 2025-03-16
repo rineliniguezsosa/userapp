@@ -1,7 +1,11 @@
+import { Modal } from "@mui/material"
+import { MuiModalProps } from "../../../types/interfaces"
 
 
-export const MuiModal = () => {
+export const MuiModal = ({open,onClose,children,...props}:MuiModalProps) => {
   return (
-    <div>MuiModal</div>
+    <Modal open={open} onClose={onClose} {...props}>
+        {children}
+    </Modal>
   )
 }
