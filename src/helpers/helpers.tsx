@@ -3,7 +3,8 @@ import { GridColDef } from '@mui/x-data-grid';
 import { MuiButton, MuiModal } from '../components/MuiComponents';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import axios from 'axios';
+const deleteuser = import.meta.env.VITE_DELETEUSER;
 
 export const columns: GridColDef[] = [
     {
@@ -58,7 +59,14 @@ export const columns: GridColDef[] = [
           }
 
           const deleteUser = async() =>{
-          
+            try {
+              const req = await axios.delete(deleteuser);
+              console.log(req);
+              
+            } catch (error) {
+              console.log(error);
+              
+            }
           }
     
           return (
