@@ -103,7 +103,7 @@ export const columns: GridColDef[] = [
          const navigate = useNavigate()
 
          const handleNavigate = () =>{
-            navigate(`/edit/heroe?${params.row}`)
+            navigate(`/edit/heroe?${params.row._id}`)
          }
           return (
             <React.Fragment>
