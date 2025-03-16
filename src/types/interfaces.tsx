@@ -13,14 +13,14 @@ export interface MuiDataTaBleProps {
 }
 
 export interface Usuario {
-    gender?:     string;
+    gender:     string;
     name:       Name;
-    location?:   Location;
-    email?:      string;
-    cell?:       string;
-    id?:         ID;
-    picture?:    Picture;
-    nat?:        string;
+    location:   Location;
+    email:      string;
+    cell:       string;
+    id:         ID;
+    picture:    Picture;
+    nat:        string;
 }
 export interface UsuarioRequest {
     results: Result[];
