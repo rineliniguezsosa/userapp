@@ -41,7 +41,7 @@ export const columns: GridColDef[] = [
     },
     {
         field: "action",
-        headerName: "Acciones",
+        headerName: "Eliminar",
         width: 150,
         renderCell: (params) => {
           const [open, setopen] = useState(false);
