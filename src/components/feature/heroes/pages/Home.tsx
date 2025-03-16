@@ -63,7 +63,7 @@ export const Home = () => {
             Agregar
           </MuiButton>
 
-          <div>
+          <div className="">
             <form action="">
               <input type="text" id="name" value="" />
             </form>
