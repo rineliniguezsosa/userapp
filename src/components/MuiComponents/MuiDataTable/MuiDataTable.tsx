@@ -1,7 +1,7 @@
 import { DataGrid } from '@mui/x-data-grid';
 import { MuiDataTaBleProps } from '../../../types/interfaces';
 
-export const MuiDataTable = ({rows,columns,checkboxSelection = true,...props}:MuiDataTaBleProps) => {
+export const MuiDataTable = ({rows,columns,checkboxSelection = false,...props}:MuiDataTaBleProps) => {
   return (
     <DataGrid
        rows={rows}
