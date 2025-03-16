@@ -13,7 +13,7 @@ export const columns: GridColDef[] = [
         field:'name', headerName: 'Name',
     },
     {
-        field:'genre', headerName: 'Gener',
+        field:'gender', headerName: 'Genero',
     },
     {
         field:'streetNumber', headerName: 'N.calle'
@@ -55,6 +55,10 @@ export const columns: GridColDef[] = [
           const handleClose = () =>{
             setopen(false);
           }
+
+          const deleteUser = async() =>{
+
+          }
     
           return (
             <React.Fragment>
@@ -72,7 +76,7 @@ export const columns: GridColDef[] = [
                         <h1>¿Estás seguro de que deseas eliminar este registro? </h1>
 
                         <div className='mt-5 flex justify-between'>
-                            <MuiButton  variant='contained' color='success' sizes='small'>Aceptar</MuiButton>
+                            <MuiButton onClick={deleteUser}  variant='contained' color='success' sizes='small'>Aceptar</MuiButton>
                             <MuiButton onClick={handleClose}  variant='contained' color='error' sizes='small'>Cancelar</MuiButton>
                         </div>
                     </div>
