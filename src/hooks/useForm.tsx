@@ -6,6 +6,7 @@ interface FormState<T> {
 
 export const useForm = <T extends FormState<string>>(initialForm:T) =>{
     console.log(initialForm);
+    const [form, setform] = useState(initialForm)
     
     return {
 
