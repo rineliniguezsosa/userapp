@@ -12,6 +12,10 @@ export const useForm = <T extends FormState<string>>(initialForm:T) =>{
         console.log(e);
         const {name,value} = e.target
         console.log(name,value);
+        setform( prevState => ({
+            ...prevState,
+            [name]:value
+        }))
         
         
     }
