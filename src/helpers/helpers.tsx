@@ -1,5 +1,9 @@
-import { MuiButton } from '../components/MuiComponents/MuiButton/MuiButton';
+/* eslint-disable react-hooks/rules-of-hooks */
+// import { useNavigate } from 'react-router-dom';
 import { GridColDef } from '@mui/x-data-grid';
+import { MuiButton, MuiModal } from '../components/MuiComponents';
+import React, { useState } from 'react';
+
 
 export const columns: GridColDef[] = [
     {
@@ -39,9 +43,36 @@ export const columns: GridColDef[] = [
         field: "action",
         headerName: "Acciones",
         width: 150,
-        renderCell: (params) => (
-          <MuiButton>
-        ),
+        renderCell: (params) => {
+          const [open, setopen] = useState(false);
+            console.log("params",params);
+    
+
+          const handleOpen = () =>{
+            setopen(true);
+          }
+
+          const handleClose = () =>{
+            setopen(false);
+          }
+    
+          return (
+            <React.Fragment>
+                <MuiButton
+                  variant="contained"
+                  color="error"
+                  sizes="small"
+                  onClick={handleOpen}
+                >
+                  Eliminar
+                </MuiButton>
+
+                <MuiModal open={open} onClose={handleClose}>
+                    <h1>Hola</h1>
+                </MuiModal>
+            </React.Fragment>
+          );
+        },
       },
     
 ]
