@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-// import { useNavigate } from 'react-router-dom';
 import { GridColDef } from '@mui/x-data-grid';
 import { MuiButton, MuiModal } from '../components/MuiComponents';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 export const columns: GridColDef[] = [
@@ -77,6 +77,30 @@ export const columns: GridColDef[] = [
                         </div>
                     </div>
                 </MuiModal>
+            </React.Fragment>
+          );
+        },
+      },
+    {
+        field: "action",
+        headerName: "Actualizar",
+        width: 150,
+        renderCell: (params) => {
+         const navigate = useNavigate()
+
+         const handleNavigate = () =>{
+            navigate(`/edit/heroe?${params.row}`)
+         }
+          return (
+            <React.Fragment>
+                <MuiButton
+                  variant="contained"
+                  color="success"
+                  sizes="small"
+                  onClick={handleNavigate}
+                >
+                  Actualizar
+                </MuiButton>
             </React.Fragment>
           );
         },
