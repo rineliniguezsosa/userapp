@@ -6,6 +6,13 @@ export interface MuiPaperProps {
     children: React.ReactNode
 }
 
+export interface MuiButtonProps {
+    variant: 'text' | 'contained' | 'outlined',
+    sizes: 'small'|'large'|'medium',
+    color: 'success' | 'error',
+    title: string
+}
+
 export interface MuiDataTaBleProps {
     rows:Usuario[],
     columns:GridColDef[],
