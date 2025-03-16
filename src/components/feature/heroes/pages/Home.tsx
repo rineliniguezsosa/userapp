@@ -57,7 +57,7 @@ export const Home = () => {
             </MuiPaper>
         </div>
 
-        <div className="w-2/5 border-2 border-red-500">
+        <div className="w-2/5 border-2 border-red-500 p-5">
           {/* form,agregar nuevas items */}
           <MuiButton variant="contained" color="success" sizes="medium">
             Agregar
