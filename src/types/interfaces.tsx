@@ -10,6 +10,7 @@ export interface MuiTextFieldProps {
     id:string,
     label:string,
     value:string,
+    onChange: ()=> void
 }
 export interface MuiFormProps {
     children:React.ReactNode,
