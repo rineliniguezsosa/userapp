@@ -1,3 +1,4 @@
+import { MuiButton } from '../components/MuiComponents/MuiButton/MuiButton';
 import { GridColDef } from '@mui/x-data-grid';
 
 export const columns: GridColDef[] = [
@@ -34,5 +35,13 @@ export const columns: GridColDef[] = [
     {
         field:'nat', headerName: 'nacionalidad',width:70
     },
+    {
+        field: "action",
+        headerName: "Acciones",
+        width: 150,
+        renderCell: (params) => (
+          <MuiButton>
+        ),
+      },
     
 ]
