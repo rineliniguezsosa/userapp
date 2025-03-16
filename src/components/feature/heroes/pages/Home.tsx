@@ -14,7 +14,7 @@ export const Home = () => {
     try {
       const { data } = await axios.get<{status: boolean,data:Usuario[]}>(getall); 
       setUserData(data.data);
-      console.log(data.data);
+      // console.log(data.data);
     } catch (error) {
       console.log(error);
       
@@ -23,7 +23,7 @@ export const Home = () => {
   
   // const paginationModel = { page: 0, pageSize: 5 };
   
-   console.log(userdata);
+  //  console.log(userdata);
    const rows = userdata.map((user: Usuario, index) => ({     
     id: index,
     _id: user._id,
@@ -38,14 +38,12 @@ export const Home = () => {
     email: user.email || "",
     nat: user.nat || "",
   }));
-    console.log("rows: ",rows);
-   
-
+    // console.log("rows: ",rows);
    
 
   useEffect(()=>{
     getUsers()
-  },[])
+  },[userdata])
 
   return (
     <div className="w-full h-screen border-2 flex border-blue-600">
