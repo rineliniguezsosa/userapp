@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 import { MuiButtonProps } from '../../../types/interfaces';
 
-export const MuiButton = ({variant,color,sizes,title,...props}:MuiButtonProps) => {
+export const MuiButton = ({variant,color,sizes,children,...props}:MuiButtonProps) => {
   return (
     <Button
         variant={variant}
@@ -9,7 +9,7 @@ export const MuiButton = ({variant,color,sizes,title,...props}:MuiButtonProps) =
         size={sizes}
         {...props}
     >
-        {title}
+        {children}
     </Button>
   )
 }
