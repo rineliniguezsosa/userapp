@@ -12,6 +12,7 @@ export interface MuiModalProps {
     children:React.ReactNode
 }
 export interface MuiButtonProps {
+    loading?:boolean,
     variant: 'text' | 'contained' | 'outlined',
     sizes: 'small'|'large'|'medium',
     color: 'success' | 'error',
@@ -20,11 +21,25 @@ export interface MuiButtonProps {
 }
 
 export interface MuiDataTaBleProps {
-    rows:Usuario[],
+    rows:UsuarioRow[],
     columns:GridColDef[],
     checkboxSelection:boolean
 }
 
+export interface UsuarioRow {
+    id: number,
+    _id: string,
+    gender: string,
+    name: string,
+    streetNumber:string,
+    streetName: string,
+    streetCity: string,
+    streetState: string,
+    streetCountry: string,
+    stretPostcode: string,
+    email: string,
+    nat: string,
+}
 export interface Usuario {
     gender:     string;
     name:       Name;
@@ -34,6 +49,7 @@ export interface Usuario {
     id:         ID;
     picture:    Picture;
     nat:        string;
+    _id:        string;
 }
 export interface UsuarioRequest {
     results: Result[];
