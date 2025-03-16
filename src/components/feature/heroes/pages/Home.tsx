@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Usuario } from "../../../../types/interfaces";
 import { MuiButton, MuiDataTable, MuiPaper } from "../../../MuiComponents";
 import { columns } from "../../../../helpers";
+import { MuiForm } from "../../../MuiComponents";
 const getall = import.meta.env.VITE_GETALL;
 
 
@@ -64,9 +65,9 @@ export const Home = () => {
           </MuiButton>
 
           <div className="">
-            <form action="">
+            <MuiForm action="">
               <input type="text" id="name" value="" />
-            </form>
+            </Mui>
           </div>
 
         </div>
