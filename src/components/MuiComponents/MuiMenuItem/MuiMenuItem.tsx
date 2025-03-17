@@ -1,9 +1,9 @@
 import MenuItem from '@mui/material/MenuItem';
 import { MuiMenuItemProps } from '../../../types/interfaces';
 
-export const MuiMenuItem = ({children}:MuiMenuItemProps) => {
+export const MuiMenuItem = ({value,children}:MuiMenuItemProps) => {
   return (
-    <MenuItem>
+    <MenuItem value={value}>
         {children}
     </MenuItem>
   )
