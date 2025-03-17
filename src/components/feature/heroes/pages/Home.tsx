@@ -1,9 +1,10 @@
 import { useEffect,useState } from "react"
 import axios from 'axios';
 import { Usuario } from "../../../../types/interfaces";
-import { MuiButton,MuiDataTable,MuiPaper,MuiTextField,MuiForm } from "../../../MuiComponents";
-import { columns } from "../../../../helpers";
+import { MuiButton,MuiDataTable,MuiPaper,MuiTextField,MuiForm,MuiMenuItem } from "../../../MuiComponents";
+import { columns,Generos } from "../../../../helpers";
 import { useForm } from "../../../../hooks";
+
 
 const getall = import.meta.env.VITE_GETALL;
 
@@ -13,8 +14,18 @@ export const Home = () => {
   const [userdata, setUserData] = useState<Usuario[]>([])
 
   const {form,handleChange} = useForm({
-    name:''
+    name:'',
+    gender:'',
+    streetNumber:'',
+    streetName:'',
+    city:'',
+    state:'',
+    country:''
   })
+  console.log("form: ",form);
+  
+  
+
   
   const getUsers = async() =>{
     try {
@@ -49,7 +60,7 @@ export const Home = () => {
 
   useEffect(()=>{
     getUsers()
-  },[userdata])
+  },[])
 
   return (
     <div className="w-full h-screen border-2 flex border-blue-600">
@@ -65,11 +76,11 @@ export const Home = () => {
 
         <div className="w-2/5 border-2 border-red-500 p-5">
           {/* form,agregar nuevas items */}
-          <MuiButton variant="contained" color="success" sizes="medium">
+          <MuiButton onClick={()=>{}} variant="contained" color="success" sizes="medium">
             Agregar
           </MuiButton>
 
-          <div className="mt-5">
+          <div className="w-full mt-5">
             <MuiForm onSubmit={()=>{}}>
               <MuiTextField
               id="name"
@@ -78,10 +89,72 @@ export const Home = () => {
               value={form.name}  
               onChange={handleChange}            
               />
+
+            <MuiTextField
+              id="gender"
+              select
+              label="Select"
+              // Maneja cambios en el select
+              // helperText="Please select your currency"
+              >
+              {Generos.map((option) => (
+                <MuiMenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MuiMenuItem>
+              ))}
+            </MuiTextField>
+
+            <MuiTextField
+              id="streetNumber"
+              label="N.Calle" 
+              name="streetNumber"
+              type="text"
+              value={form.streetNumber}  
+              onChange={handleChange}            
+              />
+
+            <MuiTextField
+              id="streetName"
+              label="Nombre de calle" 
+              name="streetName"
+              type="text"
+              value={form.streetName}  
+              onChange={handleChange}            
+              />
+
+            <MuiTextField
+              id="city"
+              label="Cuidad" 
+              name="city"
+              type="text"
+              value={form.city}  
+              onChange={handleChange}            
+              />
+
+            <MuiTextField
+              id="state"
+              label="Estado" 
+              name="state"
+              type="text"
+              value={form.state}  
+              onChange={handleChange}            
+              />
+
+            <MuiTextField
+              id="country"
+              label="País" 
+              name="country"
+              type="text"
+              value={form.country}  
+              onChange={handleChange}            
+              />
+
             </MuiForm>
           </div>
 
+        {JSON.stringify(form)}
         </div>
+
     </div>
   )
 }
