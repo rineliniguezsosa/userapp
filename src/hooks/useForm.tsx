@@ -23,7 +23,7 @@ export const useForm = (initialForm:FormState) =>{
             event.preventDefault();
 
             const {name, streetNumber, streetName, city, state, country, postcode, email, nat } = form;
-            const isValid = !name || !streetNumber || !streetName || !city || !state || !country
+            const isValid = !name || !streetNumber || !streetName || !city || !state || !country || !postcode || !email || !nat
             
             if(isValid){
                 alert("Todos los campos son obligatorios");
