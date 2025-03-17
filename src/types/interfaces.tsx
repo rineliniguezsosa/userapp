@@ -12,7 +12,8 @@ export interface MuiTextFieldProps {
     name:string,
     value:string,
     onChange: (e:React.ChangeEvent<HTMLInputElement>)=> void,
-    children?: React.ReactNode
+    children?: React.ReactNode,
+    select:boolean
 }
 export interface MuiFormProps {
     children:React.ReactNode,
