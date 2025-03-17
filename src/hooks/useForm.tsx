@@ -29,6 +29,11 @@ export const useForm = (initialForm:FormState) =>{
                 alert("Todos los campos son obligatorios");
                 return;
             }
+
+            if(!/A-Za-z/.test(name)){
+                alert("El nombtre solo debe de incluir letras");
+                return ;
+            }
             
     }
     
