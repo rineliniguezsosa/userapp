@@ -31,8 +31,13 @@ export const useForm = (initialForm:FormState) =>{
             }
 
             if(!/A-Za-z/.test(name)){
-                alert("El nombtre solo debe de incluir letras");
+                alert("El nombre solo debe de incluir letras");
                 return ;
+            }
+
+            if(!/[0-9]+/.test(streetNumber)){
+                alert('El campo número de calle debe de incluir solo números');
+                return ; 
             }
             
     }
