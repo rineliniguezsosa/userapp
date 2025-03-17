@@ -35,9 +35,9 @@ export interface MuiButtonProps {
     variant: 'text' | 'contained' | 'outlined',
     sizes: 'small'|'large'|'medium',
     color: 'success' | 'error',
-    onClick:()=> void,
+    onClick?:()=> void,
     children: React.ReactNode,
-    type?:string
+    type?:'submit'|'button'|'reset'
 }
 
 export interface MuiDataTaBleProps {
