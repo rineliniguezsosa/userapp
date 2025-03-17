@@ -36,7 +36,8 @@ export interface MuiButtonProps {
     sizes: 'small'|'large'|'medium',
     color: 'success' | 'error',
     onClick:()=> void,
-    children: React.ReactNode
+    children: React.ReactNode,
+    type?:string
 }
 
 export interface MuiDataTaBleProps {
