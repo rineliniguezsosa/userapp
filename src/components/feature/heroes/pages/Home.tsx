@@ -146,7 +146,7 @@ export const Home = () => {
                 onChange={handleChange}            
                 />
 
-              <MuiButton onClick={()=>{}} variant="contained" color="success" sizes="medium">
+              <MuiButton type="submit" variant="contained" color="success" sizes="medium">
                 Agregar
               </MuiButton>
 
