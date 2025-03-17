@@ -7,6 +7,7 @@ export interface MuiPaperProps {
 }
 
 export type MuiMenuItemProps = Omit<MuiPaperProps,"height"|"width"> & {
+    key:string,
     value:string
 }
 
