@@ -20,7 +20,10 @@ export const Home = () => {
     streetName:'',
     city:'',
     state:'',
-    country:''
+    country:'',
+    postcode:'',
+    email:'',
+    nat:''
   })
   console.log("form: ",form);
   
@@ -143,6 +146,33 @@ export const Home = () => {
                 name="country"
                 type="text"
                 value={form.country}  
+                onChange={handleChange}            
+                />
+
+              <MuiTextField
+                id="postcode"
+                label="Codigo postal" 
+                name="postcode"
+                type="text"
+                value={form.postcode}  
+                onChange={handleChange}            
+                />
+
+              <MuiTextField
+                id="email"
+                label="Email" 
+                name="email"
+                type="email"
+                value={form.email}  
+                onChange={handleChange}            
+                />
+
+              <MuiTextField
+                id="nat"
+                label="Nacionalidad" 
+                name="nat"
+                type="text"
+                value={form.nat}  
                 onChange={handleChange}            
                 />
 
