@@ -40,6 +40,25 @@ export const useForm = (initialForm:FormState) =>{
                 return ; 
             }
             
+            if(!/[A-Za-z]/.test(streetName)){
+                alert("El campo nombre de calle solo debe de incluir letras");
+                return ;
+            }
+
+            if(!/[A-Za-z]/.test(city)){
+                alert("El campo ciudad solo debe de incluir letras");
+                return ;
+            }
+
+            if(!/[A-Za-z]/.test(state)){
+                alert("El campo estado solo debe de incluir letras");
+                return ;
+            }
+
+            if(!/[A-Za-z]/.test(country)){
+                alert("El campo país solo debe de incluir letras");
+                return ;
+            }
     }
     
     return {
