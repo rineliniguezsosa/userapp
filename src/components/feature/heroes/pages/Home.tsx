@@ -76,9 +76,6 @@ export const Home = () => {
 
         <div className="w-2/5 border-2 border-red-500 p-5">
           {/* form,agregar nuevas items */}
-          <MuiButton onClick={()=>{}} variant="contained" color="success" sizes="medium">
-            Agregar
-          </MuiButton>
 
           <div className="w-full mt-5">
             <MuiForm onSubmit={()=>{}}>
@@ -140,14 +137,18 @@ export const Home = () => {
               onChange={handleChange}            
               />
 
-            <MuiTextField
-              id="country"
-              label="País" 
-              name="country"
-              type="text"
-              value={form.country}  
-              onChange={handleChange}            
-              />
+              <MuiTextField
+                id="country"
+                label="País" 
+                name="country"
+                type="text"
+                value={form.country}  
+                onChange={handleChange}            
+                />
+
+              <MuiButton onClick={()=>{}} variant="contained" color="success" sizes="medium">
+                Agregar
+              </MuiButton>
 
             </MuiForm>
           </div>
