@@ -21,6 +21,14 @@ export const useForm = (initialForm:FormState) =>{
     const handleSubmit = async(event:React.FormEvent<HTMLFormElement>) =>{
             console.log(event);
             event.preventDefault();
+
+            const {name} = form;
+            const isValid = !name 
+            
+            if(isValid){
+                alert("Todos los campos son obligatorios");
+                return;
+            }
             
     }
     
