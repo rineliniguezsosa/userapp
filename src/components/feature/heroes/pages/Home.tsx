@@ -13,7 +13,7 @@ const getall = import.meta.env.VITE_GETALL;
 export const Home = () => {
   const [userdata, setUserData] = useState<Usuario[]>([])
 
-  const {form,handleChange} = useForm({
+  const {form,handleSubmit,handleChange} = useForm({
     name:'',
     gender:'',
     streetNumber:'',
@@ -78,7 +78,7 @@ export const Home = () => {
           {/* form,agregar nuevas items */}
 
           <div className="w-full mt-5">
-            <MuiForm onSubmit={()=>{}}>
+            <MuiForm onSubmit={handleSubmit} title="Agrega tus usuarios">
               <MuiTextField
               id="name"
               label="Nombre" 
