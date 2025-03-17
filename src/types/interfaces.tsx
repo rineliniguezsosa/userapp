@@ -6,7 +6,9 @@ export interface MuiPaperProps {
     children: React.ReactNode
 }
 
-export type MuiMenuItemProps = Omit<MuiPaperProps,"height"|"width">
+export type MuiMenuItemProps = Omit<MuiPaperProps,"height"|"width"> & {
+    value:string
+}
 
 export interface MuiTextFieldProps {
     id:string,
@@ -15,7 +17,7 @@ export interface MuiTextFieldProps {
     value:string,
     onChange: (e:React.ChangeEvent<HTMLInputElement>)=> void,
     children?: React.ReactNode,
-    select:boolean
+    select?:boolean
 }
 export interface MuiFormProps {
     children:React.ReactNode,
