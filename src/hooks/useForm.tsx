@@ -60,7 +60,7 @@ export const useForm = (initialForm:FormState) =>{
                 return ;
             }
 
-            if(!/[A-Za-z]\d{2}/.test(nat)){
+            if(!/[A-Za-z]{2}$/.test(nat)){
                 alert("El campo nacionalidad debe de incluir una abreviatura de 2 letras: México : Mx")
             }
 
