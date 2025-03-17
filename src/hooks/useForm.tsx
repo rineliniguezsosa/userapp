@@ -17,9 +17,14 @@ export const useForm = (initialForm:FormState) =>{
             [name]:value
         }))
     }
+
+    const handleSubmit = async() =>{
+
+    }
     
     return {
         form,
-        handleChange
+        handleChange,
+        handleSubmit
     }
 }
