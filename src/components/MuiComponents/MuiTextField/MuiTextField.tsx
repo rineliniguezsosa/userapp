@@ -1,7 +1,16 @@
 import TextField from '@mui/material/TextField';
 import { MuiTextFieldProps } from '../../../types/interfaces';
 
-export const MuiTextField = ({id,label,name,value,onChange,children,select = false,...props}:MuiTextFieldProps) => {
+export const MuiTextField = ({
+  id,
+  label,
+  name,
+  value,
+  onChange,
+  children,
+  select = false,
+  type,
+  ...props}:MuiTextFieldProps) => {
   return (
     <TextField
       id={id}
@@ -11,9 +20,10 @@ export const MuiTextField = ({id,label,name,value,onChange,children,select = fal
       variant='outlined'
       onChange={onChange}
       select={select}
+      type={type}
       {...props}
     >
-      {children}
+      {select && children}
     </TextField>
   )
 }
