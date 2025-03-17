@@ -22,8 +22,8 @@ export const useForm = (initialForm:FormState) =>{
             console.log(event);
             event.preventDefault();
 
-            const {name} = form;
-            const isValid = !name 
+            const {name, streetNumber, streetName, city, state, country } = form;
+            const isValid = !name || !streetNumber || !streetName || !city || !state || !country
             
             if(isValid){
                 alert("Todos los campos son obligatorios");
