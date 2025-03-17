@@ -7,22 +7,23 @@ export interface MuiPaperProps {
 }
 
 export type MuiMenuItemProps = Omit<MuiPaperProps,"height"|"width"> & {
-    key:string,
     value:string
 }
 
 export interface MuiTextFieldProps {
     id:string,
     label:string,
-    name:string,
-    value:string,
-    onChange: (e:React.ChangeEvent<HTMLInputElement>)=> void,
+    name?:string,
+    value?:string,
+    onChange: (e:React.ChangeEvent<HTMLInputElement |  HTMLSelectElement | HTMLTextAreaElement>)=> void,
     children?: React.ReactNode,
     select?:boolean
+    type?:string
 }
 export interface MuiFormProps {
     children:React.ReactNode,
-    onSubmit:()=> void
+    onSubmit:()=> void,
+    title:string
 }
 export interface MuiModalProps {
     open:boolean,
