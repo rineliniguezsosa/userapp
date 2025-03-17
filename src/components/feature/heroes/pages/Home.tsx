@@ -173,7 +173,7 @@ export const Home = () => {
                 name="nat"
                 type="text"
                 value={form.nat}  
-                onChange={handleChange}            
+                onChange={handleChange}         
                 />
 
               <MuiButton type="submit" variant="contained" color="success" sizes="medium">
