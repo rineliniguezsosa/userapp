@@ -121,3 +121,14 @@ export const columns: GridColDef[] = [
       },
     
 ]
+
+export const Generos = [
+  {
+    value:'male',
+    label:'Male'
+  },
+  {
+    value:'female',
+    label:'Female'
+  }
+]
