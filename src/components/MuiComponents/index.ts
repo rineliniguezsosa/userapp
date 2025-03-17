@@ -4,3 +4,4 @@ export * from './MuiButton/MuiButton';
 export * from './MuiModal/MuiModal';
 export * from './MuiForm/MuiForm';
 export * from './MuiTextField/MuiTextField';
+export * from './MuiMenuItem/MuiMenuItem';
