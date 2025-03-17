@@ -1,5 +1,6 @@
+import axios from "axios";
 import { useState } from "react"
-
+const saveUser = import.meta.env.VITE_SAVEUSER;
 interface FormState {
     [key: string]: string;
 }
@@ -93,6 +94,15 @@ export const useForm = (initialForm:FormState) =>{
             }
 
             console.log(data);
+
+            try {
+                const req = await axios.post(saveUser,data);
+
+                console.log(req);
+                
+            } catch (error) {
+                console.log(error);
+            }
             
     }
     
