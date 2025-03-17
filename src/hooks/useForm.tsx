@@ -30,7 +30,7 @@ export const useForm = (initialForm:FormState) =>{
                 return;
             }
 
-            if(!/A-Za-z/.test(name)){
+            if(!/[A-Za-z]/.test(name)){
                 alert("El nombre solo debe de incluir letras");
                 return ;
             }
