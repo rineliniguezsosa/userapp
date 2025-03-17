@@ -18,8 +18,10 @@ export const useForm = (initialForm:FormState) =>{
         }))
     }
 
-    const handleSubmit = async() =>{
-
+    const handleSubmit = async(event:React.FormEvent<HTMLFormElement>) =>{
+            console.log(event);
+            event.preventDefault();
+            
     }
     
     return {
