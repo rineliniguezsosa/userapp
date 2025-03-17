@@ -60,8 +60,20 @@ export const useForm = (initialForm:FormState) =>{
                 return ;
             }
 
-            if(!/[A-Za-z]{2}$/.test(nat)){
+            if(!/[0-9]{4}$/.test(postcode)){
+                alert("El campo codigo postal no cumple con los requisitos");
+                return ;
+            }
+
+            // eslint-disable-next-line no-useless-escape
+            if(!/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(email)){
+                alert("El campo email no cumple con los requisitos");
+                return ;
+            }
+
+            if(!/^[A-Za-z]{2}$/.test(nat)){
                 alert("El campo nacionalidad debe de incluir una abreviatura de 2 letras: México : Mx")
+                return ;
             }
 
             const data = {
