@@ -22,7 +22,7 @@ export const useForm = (initialForm:FormState) =>{
             console.log(event);
             event.preventDefault();
 
-            const {name, streetNumber, streetName, city, state, country } = form;
+            const {name, streetNumber, streetName, city, state, country, postcode, email, nat } = form;
             const isValid = !name || !streetNumber || !streetName || !city || !state || !country
             
             if(isValid){
@@ -59,6 +59,29 @@ export const useForm = (initialForm:FormState) =>{
                 alert("El campo país solo debe de incluir letras");
                 return ;
             }
+
+            if(!/[A-Za-z]\d{2}/.test(nat)){
+                alert("El campo nacionalidad debe de incluir una abreviatura de 2 letras: México : Mx")
+            }
+
+            const data = {
+                name:name,
+                location:{
+                    street:{
+                        number: streetNumber,
+                        name: streetName
+                    },
+                    city:city,
+                    state:state,
+                    country:country,
+                    postcode:postcode
+                },
+                email:email,
+                nat:nat
+            }
+
+            console.log(data);
+            
     }
     
     return {
