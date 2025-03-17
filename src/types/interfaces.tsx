@@ -6,6 +6,8 @@ export interface MuiPaperProps {
     children: React.ReactNode
 }
 
+export type MuiMenuItemProps = Omit<MuiPaperProps,"height"|"width">
+
 export interface MuiTextFieldProps {
     id:string,
     label:string,
