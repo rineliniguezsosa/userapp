@@ -48,8 +48,8 @@ export interface MuiDataTaBleProps {
 }
 
 export interface UsuarioRow {
-    id: number,
     _id: string,
+    id: number,
     gender: string,
     name: string,
     streetNumber:string,
