@@ -66,9 +66,9 @@ export const Home = () => {
   },[])
 
   return (
-    <div className="w-full h-screen border-2 flex border-blue-600">
+    <div className="w-full h-screen flex">
         {/* contenido de mi api, lista de usuarios  */}
-        <div className="w-3/5 border-2 border-red-500 p-5">
+        <div className="w-3/5 p-5">
             <MuiPaper height={400} width={'100%'}>
               <MuiDataTable
                 rows={rows}
@@ -77,7 +77,7 @@ export const Home = () => {
             </MuiPaper>
         </div>
 
-        <div className="w-2/5 border-2 border-red-500 p-5">
+        <div className="w-2/5  p-5">
           {/* form,agregar nuevas items */}
 
           <div className="w-full mt-5">
@@ -94,8 +94,6 @@ export const Home = () => {
               id="gender"
               select
               label="Select"
-              // Maneja cambios en el select
-              // helperText="Please select your currency"
               >
               {Generos.map((option) => (
                 <MuiMenuItem key={option.value} value={option.value}>
