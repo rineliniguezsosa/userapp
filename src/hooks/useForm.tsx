@@ -188,6 +188,7 @@ export const useForm = (initialForm:FormState) =>{
         form,
         handleChange,
         handleSubmit,
-        updateUser
+        updateUser,
+        setform
     }
 }
