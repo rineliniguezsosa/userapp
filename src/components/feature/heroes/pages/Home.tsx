@@ -12,6 +12,7 @@ const getall = import.meta.env.VITE_GETALL;
 
 export const Home = () => {
   const [userdata, setUserData] = useState<Usuario[]>([])
+  // const [updateform, setupdateform] = useState(false)
 
   const {form,handleSubmit,handleChange} = useForm({
     name:'',
@@ -43,12 +44,11 @@ export const Home = () => {
   
   // const paginationModel = { page: 0, pageSize: 5 };
   
-  //  console.log(userdata);
    const rows: UsuarioRow[] = userdata.map((user, index) => ({     
     id: index,
     _id: user._id,
     gender: user.gender,
-    name: user.name.first,
+    name: `${user.name}`,
     streetNumber:user.location.street.number.toString() || "",
     streetName: user.location.street.name || "",
     streetCity: user.location.city || "",
