@@ -3,14 +3,11 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom"
 import { MuiButton, MuiForm, MuiTextField } from "../../../MuiComponents";
-// import { Usuario } from "../../../../types/interfaces";
 import { useForm } from "../../../../hooks";
 const getuserbyid = import.meta.env.VITE_USERBYID;
 
 export const UpdateHeroes = () => {
-  // const [user, setuser] = useState<Usuario[]>([])
-  // console.log(user);
-  
+ 
   const {form,setform,updateUser,handleChange} = useForm({
       name:'',
       gender:'',
