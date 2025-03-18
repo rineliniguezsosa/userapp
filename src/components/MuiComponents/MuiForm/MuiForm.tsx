@@ -9,4 +9,3 @@ export const MuiForm = ({children,onSubmit,title,className,...props}:MuiFormProp
     </Box>
   )
 }
-// sx={{width:'100%',border:'1px red solid',display:'flex',flexDirection:'column',gap:2}}
