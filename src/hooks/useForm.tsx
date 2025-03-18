@@ -106,10 +106,15 @@ export const useForm = (initialForm:FormState) =>{
             }
             
     }
+
+    const updateUser = async(event:React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+    }
     
     return {
         form,
         handleChange,
-        handleSubmit
+        handleSubmit,
+        updateUser
     }
 }
