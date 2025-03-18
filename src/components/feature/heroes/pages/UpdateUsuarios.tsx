@@ -35,6 +35,7 @@ export const UpdateHeroes = () => {
       console.log(info);
        
       setform({
+        _id: info._id,
         name: info.name || '',
         gender: info.gender || '',
         streetNumber: info.location?.street?.number?.toString() || '',
