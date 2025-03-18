@@ -1,13 +1,15 @@
 import axios from "axios";
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 const saveUser = import.meta.env.VITE_SAVEUSER;
+const updateuserbyid = import.meta.env.VITE_UPDATEUSER;
 interface FormState {
     [key: string]: string;
 }
 
 export const useForm = (initialForm:FormState) =>{
-    console.log(initialForm);
     const [form, setform] = useState(initialForm)
+    const navigate = useNavigate();
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>{
         const {name,value} = e.target
@@ -20,7 +22,6 @@ export const useForm = (initialForm:FormState) =>{
     }
 
     const handleSubmit = async(event:React.FormEvent<HTMLFormElement>) =>{
-            console.log(event);
             event.preventDefault();
 
             const {name, streetNumber, streetName, city, state, country, postcode, email, nat } = form;
@@ -110,7 +111,8 @@ export const useForm = (initialForm:FormState) =>{
     const updateUser = async(event:React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        const {name, streetNumber, streetName, city, state, country, postcode, email, nat } = form;
+        const { _id, name, streetNumber, streetName, city, state, country, postcode, email, nat } = form;
+            
             const isValid = !name || !streetNumber || !streetName || !city || !state || !country || !postcode || !email || !nat
             
             if(isValid){
@@ -163,7 +165,7 @@ export const useForm = (initialForm:FormState) =>{
                 alert("El campo nacionalidad debe de incluir una abreviatura de 2 letras: México : Mx")
                 return ;
             }
-
+          
             const data = {
                 name:name,
                 gender:'female',
@@ -180,7 +182,17 @@ export const useForm = (initialForm:FormState) =>{
                 email:email,
                 nat:nat
             }
-            console.log(data);
+            
+            try {
+                const req = await axios.put(`${updateuserbyid}/${_id}`,{data})
+
+                navigate('/')
+                console.log(req);
+                
+            } catch (error) {
+                console.log(error);
+                
+            }
             
     }
     
