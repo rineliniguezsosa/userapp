@@ -1,4 +1,4 @@
-import { BrowserRouter,Routes,Route,Navigate } from "react-router-dom"
+import { HashRouter,Routes,Route,Navigate } from "react-router-dom"
 import { Home } from "../components/feature/heroes/pages/Home"
 import { Nav } from "../components/layout/nav/Nav"
 import { UpdateHeroes } from "../components/feature/heroes/pages/UpdateUsuarios"
@@ -6,7 +6,7 @@ import { UpdateHeroes } from "../components/feature/heroes/pages/UpdateUsuarios"
 
 export const UserRouter = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
         <main>
             <Nav/>
             <Routes>
@@ -16,6 +16,6 @@ export const UserRouter = () => {
                 <Route path="/*" element={<Navigate to="/home"/>}></Route>
             </Routes>
         </main>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
