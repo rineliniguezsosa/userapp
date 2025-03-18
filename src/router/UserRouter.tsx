@@ -10,10 +10,10 @@ export const UserRouter = () => {
         <main>
             <Nav/>
             <Routes>
-                <Route path="/" element={<Home/>}></Route>
+                <Route path="/home" element={<Home/>}></Route>
                 <Route path="/edit/heroe" element={<UpdateHeroes />}></Route>
 
-                <Route path="/*" element={<Navigate to="/"/>}></Route>
+                <Route path="/*" element={<Navigate to="/home"/>}></Route>
             </Routes>
         </main>
     </BrowserRouter>
