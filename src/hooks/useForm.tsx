@@ -24,16 +24,16 @@ export const useForm = (initialForm:FormState) =>{
     const handleSubmit = async(event:React.FormEvent<HTMLFormElement>) =>{
             event.preventDefault();
 
-            const {name, streetNumber, streetName, city, state, country, postcode, email, nat } = form;
-            const isValid = !name || !streetNumber || !streetName || !city || !state || !country || !postcode || !email || !nat
+            const {name, gender, streetNumber, streetName, city, state, country, postcode, email, nat } = form;
+            const isValid = !name || !gender || !streetNumber || !streetName || !city || !state || !country || !postcode || !email || !nat
             
             if(isValid){
                 alert("Todos los campos son obligatorios");
                 return;
             }
 
-            if(!/[A-Za-z]/.test(name)){
-                alert("El nombre solo debe de incluir letras");
+            if(!/[A-Za-z]/.test(gender)){
+                alert("El genero solo debe de incluir letras");
                 return ;
             }
 
@@ -80,7 +80,7 @@ export const useForm = (initialForm:FormState) =>{
 
             const data = {
                 name:name,
-                gender:'female',
+                gender:gender,
                 location:{
                     street:{
                         number: streetNumber,
@@ -109,9 +109,9 @@ export const useForm = (initialForm:FormState) =>{
     const updateUser = async(event:React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        const { _id, name, streetNumber, streetName, city, state, country, postcode, email, nat } = form;
+        const { _id, name, gender, streetNumber, streetName, city, state, country, postcode, email, nat } = form;
             
-            const isValid = !name || !streetNumber || !streetName || !city || !state || !country || !postcode || !email || !nat
+            const isValid = !name || !gender || !streetNumber || !streetName || !city || !state || !country || !postcode || !email || !nat
             
             if(isValid){
                 alert("Todos los campos son obligatorios");
@@ -120,6 +120,11 @@ export const useForm = (initialForm:FormState) =>{
 
             if(!/[A-Za-z]/.test(name)){
                 alert("El nombre solo debe de incluir letras");
+                return ;
+            }
+
+            if(!/[A-Za-z]/.test(gender)){
+                alert("El genero solo debe de incluir letras");
                 return ;
             }
 
@@ -166,7 +171,7 @@ export const useForm = (initialForm:FormState) =>{
           
             const data = {
                 name:name,
-                gender:'female',
+                gender:gender,
                 location:{
                     street:{
                         number: streetNumber,
