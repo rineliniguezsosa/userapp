@@ -32,7 +32,7 @@ export const columns: GridColDef[] = [
         field:'streetCountry', headerName: 'País'
     },
     {
-        field:'stretPostcode', headerName: 'C.P',
+        field:'streetPostcode', headerName: 'C.P',
     },
     {
         field:'email', headerName: 'email'
