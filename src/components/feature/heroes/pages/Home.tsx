@@ -25,7 +25,7 @@ export const Home = () => {
     email:'',
     nat:''
   })
-  console.log("form: ",form);
+ 
   
   
 
