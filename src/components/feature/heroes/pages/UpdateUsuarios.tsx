@@ -2,12 +2,25 @@
 import axios from "axios";
 import { useEffect,useState } from "react";
 import { useLocation } from "react-router-dom"
-import { MuiForm } from "../../../MuiComponents";
+import { MuiForm, MuiTextField } from "../../../MuiComponents";
 import { Usuario } from "../../../../types/interfaces";
+import { useForm } from "../../../../hooks";
 const getuserbyid = import.meta.env.VITE_USERBYID;
 
 export const UpdateHeroes = () => {
   const [user, setuser] = useState<Usuario[]>([])
+  const {form,updateUser,handleChange} = useForm({
+      name:'',
+      gender:'',
+      streetNumber:'',
+      streetName:'',
+      city:'',
+      state:'',
+      country:'',
+      postcode:'',
+      email:'',
+      nat:''
+    })
   console.log(user);
   
   const location = useLocation();
@@ -36,8 +49,8 @@ export const UpdateHeroes = () => {
   
   return (
     <div className="w-full m-auto">
-      <MuiForm title="Actualizar registros" onSubmit={()=>{}} >
-          <h1>jjj</h1>
+      <MuiForm title="Actualizar registros" onSubmit={updateUser} >
+      <h1>jjj</h1>
       </MuiForm>
     </div>
   )
