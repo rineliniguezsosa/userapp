@@ -53,11 +53,11 @@ export interface UsuarioRow {
     gender: string,
     name: string,
     streetNumber:string,
-    streetName: string,
+    streetName: string | number,
     streetCity: string,
     streetState: string,
     streetCountry: string,
-    stretPostcode: string,
+    streetPostcode: string | number,
     email: string,
     nat: string,
 }
