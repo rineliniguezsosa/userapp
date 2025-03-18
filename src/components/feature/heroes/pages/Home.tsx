@@ -77,11 +77,12 @@ export const Home = () => {
             </MuiPaper>
         </div>
 
-        <div className="w-2/5  p-5">
+        <div className="w-2/5 p-1">
           {/* form,agregar nuevas items */}
 
-          <div className="w-full mt-5">
-            <MuiForm onSubmit={handleSubmit} title="Agrega tus usuarios">
+          <div className="w-full flex items-center justify-center mt-5">
+          
+            <MuiForm className="w-3/4 flex flex-col gap-2" onSubmit={handleSubmit} title="Agrega tus usuarios">
               <MuiTextField
               id="name"
               label="Nombre" 
@@ -180,8 +181,6 @@ export const Home = () => {
 
             </MuiForm>
           </div>
-
-        {JSON.stringify(form)}
         </div>
 
     </div>
