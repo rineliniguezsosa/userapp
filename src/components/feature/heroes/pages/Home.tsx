@@ -28,9 +28,6 @@ export const Home = () => {
   })
  
   
-  
-
-  
   const getUsers = async() =>{
     try {
       const { data } = await axios.get<{status: boolean,data:Usuario[]}>(getall); 
@@ -63,7 +60,7 @@ export const Home = () => {
 
   useEffect(()=>{
     getUsers()
-  },[])
+  },[userdata])
 
   return (
     <div className="w-full h-screen flex">
