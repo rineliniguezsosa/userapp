@@ -23,7 +23,8 @@ export interface MuiTextFieldProps {
 export interface MuiFormProps {
     children:React.ReactNode,
     onSubmit:(e:React.FormEvent<HTMLFormElement>)=> void,
-    title:string
+    title:string,
+    className?:string
 }
 export interface MuiModalProps {
     open:boolean,
