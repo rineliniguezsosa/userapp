@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react"
 import axios from 'axios';
-import { Usuario } from "../../../../types/interfaces";
+import { Usuario, UsuarioRow } from "../../../../types/interfaces";
 import { MuiButton,MuiDataTable,MuiPaper,MuiTextField,MuiForm } from "../../../MuiComponents";
 import { columns} from "../../../../helpers";
 import { useForm } from "../../../../hooks";
@@ -44,12 +44,12 @@ export const Home = () => {
   // const paginationModel = { page: 0, pageSize: 5 };
   
   //  console.log(userdata);
-   const rows = userdata.map((user: Usuario, index) => ({     
+   const rows: UsuarioRow[] = userdata.map((user, index) => ({     
     id: index,
     _id: user._id,
     gender: user.gender,
     name: user.name.first,
-    streetNumber:user.location.street.number || "",
+    streetNumber:user.location.street.number.toString() || "",
     streetName: user.location.street.name || "",
     streetCity: user.location.city || "",
     streetState: user.location.state || "",
@@ -71,9 +71,8 @@ export const Home = () => {
         <div className="w-3/5 p-5">
             <MuiPaper height={400} width={'100%'}>
               <MuiDataTable
-                rows={rows}
-                columns={columns}
-              />
+            rows={rows}
+            columns={columns} checkboxSelection={false}              />
             </MuiPaper>
         </div>
 
