@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom"
+import { MuiForm } from "../../../MuiComponents";
 const getuserbyid = import.meta.env.VITE_USERBYID;
 
 export const UpdateHeroes = () => {
@@ -29,6 +30,10 @@ export const UpdateHeroes = () => {
   
   
   return (
-    <div>UpdateHeroes</div>
+    <div className="w-full m-auto">
+      <MuiForm title="Actualizar registros" onSubmit={()=>{}} >
+          <h1>jjj</h1>
+      </MuiForm>
+    </div>
   )
 }
