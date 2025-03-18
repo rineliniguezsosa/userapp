@@ -93,7 +93,7 @@ export const Home = () => {
 
             <MuiTextField
               id="gender"
-              label="Gnero" 
+              label="Genero" 
               name="gender"
               type="text"
               value={form.gender}  
