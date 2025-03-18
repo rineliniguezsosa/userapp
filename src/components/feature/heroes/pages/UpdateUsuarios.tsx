@@ -66,6 +66,15 @@ export const UpdateHeroes = () => {
             onChange={handleChange}         
           />
 
+            <MuiTextField
+              id="gender"
+              label="Gnero" 
+              name="gender"
+              type="text"
+              value={form.gender}  
+              onChange={handleChange}            
+              />
+
           <MuiTextField
             id="streetNumber"
             label="N.Calle" 
