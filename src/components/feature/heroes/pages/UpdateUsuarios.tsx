@@ -57,8 +57,8 @@ export const UpdateHeroes = () => {
   },[_id])
     
   return (
-    <div className="w-full m-auto">
-      <MuiForm title="Actualizar registros" onSubmit={updateUser} >
+    <div className="w-full flex items-center justify-center">
+      <MuiForm className="w-1/3 flex flex-col gap-3" title="Actualizar registros" onSubmit={updateUser} >
           <MuiTextField
             id="name"
             label="Nombre" 
