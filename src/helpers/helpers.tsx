@@ -47,7 +47,6 @@ export const columns: GridColDef[] = [
         renderCell: (params) => {
           const [open, setopen] = useState(false);
           const [loading, setloading] = useState(false);
-            // console.log("params",params);
     
 
           const handleOpen = () =>{
