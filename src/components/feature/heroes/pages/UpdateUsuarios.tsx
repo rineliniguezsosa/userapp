@@ -1,11 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import { useLocation } from "react-router-dom"
 import { MuiForm } from "../../../MuiComponents";
+import { Usuario } from "../../../../types/interfaces";
 const getuserbyid = import.meta.env.VITE_USERBYID;
 
 export const UpdateHeroes = () => {
+  const [user, setuser] = useState<Usuario[]>([])
+  console.log(user);
+  
   const location = useLocation();
   // const navigate = useNavigate();
   const queryParams = new URLSearchParams(location.search);
@@ -15,8 +19,9 @@ export const UpdateHeroes = () => {
   
   const getUserByMongoId = async() =>{
     try {
-      const req = await axios.get(`${getuserbyid}/${_id}`)
-      console.log(req);
+      const { data } = await axios.get(`${getuserbyid}/${_id}`)
+      console.log(data.data);
+      setuser(data.data)
       
     } catch (error) {
       console.log(error);
