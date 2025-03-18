@@ -1,8 +1,8 @@
 import { useEffect,useState } from "react"
 import axios from 'axios';
 import { Usuario } from "../../../../types/interfaces";
-import { MuiButton,MuiDataTable,MuiPaper,MuiTextField,MuiForm,MuiMenuItem } from "../../../MuiComponents";
-import { columns,Generos } from "../../../../helpers";
+import { MuiButton,MuiDataTable,MuiPaper,MuiTextField,MuiForm } from "../../../MuiComponents";
+import { columns} from "../../../../helpers";
 import { useForm } from "../../../../hooks";
 
 
@@ -48,13 +48,13 @@ export const Home = () => {
     id: index,
     _id: user._id,
     gender: user.gender,
-    name: user.name,
+    name: user.name.first,
     streetNumber:user.location.street.number || "",
     streetName: user.location.street.name || "",
     streetCity: user.location.city || "",
     streetState: user.location.state || "",
     streetCountry:  user.location.country || "",
-    stretPostcode: user.location.postcode || "",
+    streetPostcode: user.location.postcode || "",
     email: user.email || "",
     nat: user.nat || "",
   }));
@@ -93,15 +93,12 @@ export const Home = () => {
 
             <MuiTextField
               id="gender"
-              select
-              label="Select"
-              >
-              {Generos.map((option) => (
-                <MuiMenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MuiMenuItem>
-              ))}
-            </MuiTextField>
+              label="Gnero" 
+              name="gender"
+              type="text"
+              value={form.gender}  
+              onChange={handleChange}            
+              />
 
             <MuiTextField
               id="streetNumber"
