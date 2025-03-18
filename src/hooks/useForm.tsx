@@ -13,7 +13,7 @@ export const useForm = (initialForm:FormState) =>{
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>{
         const {name,value} = e.target
-        console.log(name,value);
+     
         
         setform( prevState => ({
             ...prevState,
@@ -94,8 +94,6 @@ export const useForm = (initialForm:FormState) =>{
                 email:email,
                 nat:nat
             }
-
-            console.log(data);
 
             try {
                 const req = await axios.post(saveUser,data);
@@ -182,7 +180,6 @@ export const useForm = (initialForm:FormState) =>{
                 email:email,
                 nat:nat
             }
-            
             try {
                 const req = await axios.put(`${updateuserbyid}/${_id}`,{data})
 
