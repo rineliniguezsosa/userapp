@@ -79,6 +79,7 @@ export const useForm = (initialForm:FormState) =>{
 
             const data = {
                 name:name,
+                gender:'female',
                 location:{
                     street:{
                         number: streetNumber,
