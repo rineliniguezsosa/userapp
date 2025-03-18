@@ -25,14 +25,11 @@ export const UpdateHeroes = () => {
   // const navigate = useNavigate();
   const queryParams = new URLSearchParams(location.search);
   const _id = queryParams.get("_id");
-  console.log(location);
-  console.log("q",queryParams.get("_id"));
   
   const getUserByMongoId = async() =>{
     try {
       const { data } = await axios.get(`${getuserbyid}/${_id}`)
       const [ info ] = data.data;
-      console.log(info);
        
       setform({
         _id: info._id,
@@ -52,7 +49,7 @@ export const UpdateHeroes = () => {
       
     }
   }
-  
+
   useEffect(()=>{
     getUserByMongoId();
   },[_id])
