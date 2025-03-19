@@ -7,6 +7,7 @@ import { useForm } from "../../../../hooks";
 
 
 const getall = import.meta.env.VITE_GETALL;
+console.log(getall);
 
 
 
@@ -27,7 +28,7 @@ export const Home = () => {
     nat:''
   })
  
-  
+  console.log(import.meta.env.VITE_GETALL);
   const getUsers = async() =>{
     try {
       const { data } = await axios.get<{status: boolean,data:Usuario[]}>(getall); 
