@@ -1,5 +1,7 @@
 import { GridColDef } from "@mui/x-data-grid";
 import React from "react"
+import  { SelectChangeEvent } from '@mui/material/Select';
+
 export interface MuiPaperProps {
     height:number,
     width:string,
@@ -7,9 +9,20 @@ export interface MuiPaperProps {
 }
 
 export type MuiMenuItemProps = Omit<MuiPaperProps,"height"|"width"> & {
-    value:string
+    key:string,
+    value:string,
+    children:React.ReactNode
 }
 
+export interface MuiSelectProps {
+    id:string,
+    value:string,
+    label:string,
+    labelId:string,
+    onChange: (e:SelectChangeEvent<string>)=> void,
+    name:string,
+    children?:React.ReactNode
+}
 export interface MuiTextFieldProps {
     id:string,
     label:string,
