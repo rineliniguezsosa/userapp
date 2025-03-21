@@ -1,4 +1,4 @@
-import { InputLabel } from "@mui/material"
+import { InputLabel,Select } from "@mui/material"
 
 
 export const MuiSelect = () => {
