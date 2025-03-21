@@ -1,8 +1,8 @@
 import { useEffect,useState } from "react"
 import axios from 'axios';
 import { Usuario, UsuarioRow } from "../../../../types/interfaces";
-import { MuiButton,MuiDataTable,MuiPaper,MuiTextField,MuiForm } from "../../../MuiComponents";
-import { columns} from "../../../../helpers";
+import { MuiButton,MuiDataTable,MuiPaper,MuiTextField,MuiForm, MuiSelect,MuiMenuItem } from "../../../MuiComponents";
+import { columns, Generos} from "../../../../helpers";
 import { useForm } from "../../../../hooks";
 
 
@@ -27,7 +27,8 @@ export const Home = () => {
     email:'',
     nat:''
   })
- 
+  console.log(form);
+  
   const getUsers = async() =>{
     try {
       const { data } = await axios.get<{status: boolean,data:Usuario[]}>(getall); 
@@ -60,7 +61,7 @@ export const Home = () => {
 
   useEffect(()=>{
     getUsers()
-  },[userdata])
+  },[])
 
   return (
     <div className="w-full h-screen flex">
@@ -87,14 +88,21 @@ export const Home = () => {
               onChange={handleChange}            
               />
 
-            <MuiTextField
-              id="gender"
-              label="Genero" 
+            <MuiSelect
+              labelId="select-gender"
+              id="simple-select-gender"
+              value={form.gender}
+              label="Genero"
+              onChange={handleChange}
               name="gender"
-              type="text"
-              value={form.gender}  
-              onChange={handleChange}            
-              />
+            >
+            {
+              Generos.map(gender => (
+                <MuiMenuItem key={gender.value} value={gender.value}>{gender.label}</MuiMenuItem>
+              ))
+
+            }
+            </MuiSelect>
 
             <MuiTextField
               id="streetNumber"
