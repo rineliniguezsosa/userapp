@@ -11,7 +11,7 @@ export const UserRouter = () => {
             <Nav/>
             <Routes>
                 <Route path="/home" element={<Home/>}></Route>
-                <Route path="/edit/heroe" element={<UpdateUsuarios />}></Route>
+                <Route path="/edit/user" element={<UpdateUsuarios />}></Route>
 
                 <Route path="/*" element={<Navigate to="/home"/>}></Route>
             </Routes>
