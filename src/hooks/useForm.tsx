@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+import { SelectChangeEvent } from '@mui/material/Select';
 const saveUser = import.meta.env.VITE_SAVEUSER;
 const updateuserbyid = import.meta.env.VITE_UPDATEUSER;
 interface FormState {
@@ -11,7 +12,7 @@ export const useForm = (initialForm:FormState) =>{
     const [form, setform] = useState(initialForm)
     const navigate = useNavigate();
 
-    const handleChange = (e:React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>{
+    const handleChange =  (e: React.ChangeEvent<HTMLInputElement |  HTMLSelectElement | HTMLTextAreaElement> | SelectChangeEvent<string> ) =>{
         const {name,value} = e.target
      
         
