@@ -6,7 +6,7 @@ import { MuiButton, MuiForm, MuiTextField } from "../../../MuiComponents";
 import { useForm } from "../../../../hooks";
 const getuserbyid = import.meta.env.VITE_USERBYID;
 
-export const UpdateHeroes = () => {
+export const UpdateUsuarios = () => {
  
   const {form,setform,updateUser,handleChange} = useForm({
       name:'',
