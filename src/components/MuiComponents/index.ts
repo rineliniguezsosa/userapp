@@ -5,3 +5,4 @@ export * from './MuiModal/MuiModal';
 export * from './MuiForm/MuiForm';
 export * from './MuiTextField/MuiTextField';
 export * from './MuiMenuItem/MuiMenuItem';
+export * from './MuiSelect/MuiSelect';
