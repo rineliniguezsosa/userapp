@@ -1,10 +1,22 @@
 import { InputLabel,Select } from "@mui/material"
+import { MuiSelectProps } from "../../../types/interfaces"
 
 
-export const MuiSelect = () => {
+export const MuiSelect = ({id,name,value,label,labelId,onChange,children,...props}:MuiSelectProps) => {
   return (
     <>
-    <InputLabel id="genero-label">Genero</InputLabel>
+    <InputLabel id={labelId}>{label}</InputLabel>
+     <Select
+        labelId={labelId}
+        id={id}
+        value={value}
+        label={label}
+        onChange={onChange}
+        name={name}
+        {...props}
+    >
+      {children}
+    </Select>
     </>
   )
 }
