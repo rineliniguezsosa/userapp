@@ -114,23 +114,14 @@ export const Home = () => {
               />
 
             <MuiTextField
-              id="streetName"
-              label="Nombre de calle" 
-              name="streetName"
+              id="country"
+              label="País" 
+              name="country"
               type="text"
-              value={form.streetName}  
+              value={form.country}  
               onChange={handleChange}            
               />
-
-            <MuiTextField
-              id="city"
-              label="Cuidad" 
-              name="city"
-              type="text"
-              value={form.city}  
-              onChange={handleChange}            
-              />
-
+            
             <MuiTextField
               id="state"
               label="Estado" 
@@ -139,15 +130,24 @@ export const Home = () => {
               value={form.state}  
               onChange={handleChange}            
               />
-
+            
               <MuiTextField
-                id="country"
-                label="País" 
-                name="country"
+                id="city"
+                label="Cuidad" 
+                name="city"
                 type="text"
-                value={form.country}  
+                value={form.city}  
                 onChange={handleChange}            
-                />
+              />
+
+            <MuiTextField
+              id="streetName"
+              label="Nombre de calle" 
+              name="streetName"
+              type="text"
+              value={form.streetName}  
+              onChange={handleChange}            
+              />
 
               <MuiTextField
                 id="postcode"
