@@ -81,7 +81,7 @@ export const columns: GridColDef[] = [
                 </MuiButton>
 
                 <MuiModal open={open} onClose={handleClose}>
-                    <div className=''>
+                    <div>
                         <h1>¿Estás seguro de que deseas eliminar este registro? </h1>
 
                         <div className='mt-5 flex justify-between'>
