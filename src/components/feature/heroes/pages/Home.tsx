@@ -46,7 +46,7 @@ export const Home = () => {
     try {
       const {data} = await axios.get(`https://restcountries.com/v3.1/all`);
       console.log(data);
-      
+      setCountries(data)
     } catch (error) {
       console.log(error);
       
