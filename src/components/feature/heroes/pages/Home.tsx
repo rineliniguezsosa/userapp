@@ -44,7 +44,7 @@ export const Home = () => {
   
   const getCountries = async() => {
     try {
-      const {data} = await axios.get(`https://us1.locationiq.com/v1/country.php?key=${api_key}&format=json`);
+      const {data} = await axios.get(`https://restcountries.com/v3.1/all`);
       console.log(data);
       
     } catch (error) {
