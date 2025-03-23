@@ -7,7 +7,7 @@ import { useForm } from "../../../../hooks";
 
 
 const getall = import.meta.env.VITE_GETALL;
-
+const api_key = import.meta.env.VITE_LOCATIONIQ_APIKEY;
 
 
 
