@@ -9,6 +9,7 @@ import { useForm } from "../../../../hooks";
 const getall = import.meta.env.VITE_GETALL;
 const api_key = import.meta.env.VITE_LOCATIONIQ_APIKEY;
 
+console.log(api_key);
 
 
 export const Home = () => {
@@ -41,6 +42,10 @@ export const Home = () => {
     }
   }
   
+  const getCountries = async() => {
+
+  }
+  
   // const paginationModel = { page: 0, pageSize: 5 };
   
    const rows: UsuarioRow[] = userdata.map((user, index) => ({     
@@ -61,7 +66,8 @@ export const Home = () => {
    
 
   useEffect(()=>{
-    getUsers()
+    getUsers();
+    getCountries();
   },[])
 
   return (
