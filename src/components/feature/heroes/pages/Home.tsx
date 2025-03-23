@@ -118,14 +118,6 @@ export const Home = () => {
             }
             </MuiSelect>
 
-            <MuiTextField
-              id="streetNumber"
-              label="N.Calle" 
-              name="streetNumber"
-              type="text"
-              value={form.streetNumber}  
-              onChange={handleChange}            
-              />
 
             <MuiTextField
               id="country"
@@ -171,6 +163,15 @@ export const Home = () => {
                 value={form.postcode}  
                 onChange={handleChange}            
                 />
+                
+            <MuiTextField
+              id="streetNumber"
+              label="N.Calle" 
+              name="streetNumber"
+              type="text"
+              value={form.streetNumber}  
+              onChange={handleChange}            
+              />
 
               <MuiTextField
                 id="email"
