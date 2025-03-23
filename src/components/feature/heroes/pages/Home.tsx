@@ -119,7 +119,22 @@ export const Home = () => {
             </MuiSelect>
 
 
-            <MuiTextField
+            <MuiSelect
+              labelId="select-country"
+              id="simple-select-country"
+              value={form.country}
+              label="País"
+              onChange={handleChange}
+              name="country"
+            >
+            {
+              countries.map(countries => (
+                <MuiMenuItem key={countries.name.common} value={countries.name.common}>{countries.name.common}</MuiMenuItem>
+              ))
+
+            }
+            </MuiSelect>
+            {/* <MuiTextField
               id="country"
               label="País" 
               name="country"
@@ -127,7 +142,7 @@ export const Home = () => {
               value={form.country}  
               onChange={handleChange}            
               />
-            
+             */}
             <MuiTextField
               id="state"
               label="Estado" 
@@ -163,7 +178,7 @@ export const Home = () => {
                 value={form.postcode}  
                 onChange={handleChange}            
                 />
-                
+
             <MuiTextField
               id="streetNumber"
               label="N.Calle" 
