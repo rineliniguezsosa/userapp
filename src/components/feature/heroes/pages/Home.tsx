@@ -13,6 +13,7 @@ const getall = import.meta.env.VITE_GETALL;
 
 export const Home = () => {
   const [userdata, setUserData] = useState<Usuario[]>([])
+  const [countries, setCountries] = useState([]);
   // const [updateform, setupdateform] = useState(false)
 
   const {form,handleSubmit,handleChange} = useForm({
