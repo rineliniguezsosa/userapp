@@ -43,7 +43,14 @@ export const Home = () => {
   }
   
   const getCountries = async() => {
-
+    try {
+      const {data} = await axios.get(`https://us1.locationiq.com/v1/country.php?key=${api_Key}&format=json`);
+      console.log(data);
+      
+    } catch (error) {
+      console.log(error);
+      
+    }
   }
   
   // const paginationModel = { page: 0, pageSize: 5 };
