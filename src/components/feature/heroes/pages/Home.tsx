@@ -4,7 +4,7 @@ import { Usuario, UsuarioRow } from "../../../../types/interfaces";
 import { MuiButton,MuiDataTable,MuiPaper,MuiTextField,MuiForm, MuiSelect,MuiMenuItem } from "../../../MuiComponents";
 import { columns, Generos} from "../../../../helpers";
 import { useForm } from "../../../../hooks";
-
+import { Restcountries } from '../../../../types'
 
 const getall = import.meta.env.VITE_GETALL;
 const api_key = import.meta.env.VITE_LOCATIONIQ_APIKEY;
@@ -14,7 +14,7 @@ console.log(api_key);
 
 export const Home = () => {
   const [userdata, setUserData] = useState<Usuario[]>([])
-  const [countries, setCountries] = useState([]);
+  const [countries, setCountries] = useState<Restcountries[]>([]);
   // const [updateform, setupdateform] = useState(false)
 
   const {form,handleSubmit,handleChange} = useForm({
