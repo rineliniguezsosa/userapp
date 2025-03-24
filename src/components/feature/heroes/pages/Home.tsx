@@ -1,22 +1,25 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect,useState } from "react"
 import axios from 'axios';
 import { Usuario, UsuarioRow } from "../../../../types/interfaces";
 import { MuiButton,MuiDataTable,MuiPaper,MuiTextField,MuiForm, MuiSelect,MuiMenuItem } from "../../../MuiComponents";
 import { columns, Generos} from "../../../../helpers";
 import { useForm } from "../../../../hooks";
-import { Restcountries } from '../../../../types'
+import { AllCountries } from '../../../../types'
 
 const getall = import.meta.env.VITE_GETALL;
-const api_key = import.meta.env.VITE_LOCATIONIQ_APIKEY;
+const api_key = import.meta.env.VITE_COUNTRYSTATE_APIKEY;
 
 console.log(api_key);
 
 
 export const Home = () => {
   const [userdata, setUserData] = useState<Usuario[]>([])
-  const [countries, setCountries] = useState<Restcountries[]>([]);
+  const [countries, setCountries] = useState<AllCountries[]>([]);
+  const [state] = useState([])
   // const [updateform, setupdateform] = useState(false)
-
+ console.log(state);
+ 
   const {form,handleSubmit,handleChange} = useForm({
     name:'',
     gender:'',
@@ -44,9 +47,28 @@ export const Home = () => {
   
   const getCountries = async() => {
     try {
-      const {data} = await axios.get(`https://restcountries.com/v3.1/all`);
+      const {data} = await axios.get(`https://api.countrystatecity.in/v1/countries`,{
+        headers:{'X-CSCAPI-KEY':api_key}
+      });
       console.log(data);
       setCountries(data)
+    } catch (error) {
+      console.log(error);
+      
+    }
+  }
+
+  const getStates = async() => {
+    try {
+      if(!form.country) return;
+
+      const { data } = await axios.get(`https://api.countrystatecity.in/v1/countries/${form.country}/states`,{
+        headers:{'X-CSCAPI-KEY':api_key}
+      })
+      console.log("mexico: ",data);
+      
+      // console.log(data);
+      // setstate(data)
     } catch (error) {
       console.log(error);
       
@@ -76,6 +98,12 @@ export const Home = () => {
     getUsers();
     getCountries();
   },[])
+
+  useEffect(()=>{
+    if(form.country){
+      getStates()
+    }
+  },[form.country])
 
   return (
     <div className="w-full h-screen flex">
@@ -129,7 +157,7 @@ export const Home = () => {
             >
             {
               countries.map(countries => (
-                <MuiMenuItem key={countries.name.common} value={countries.name.common}>{countries.name.common}</MuiMenuItem>
+                <MuiMenuItem key={countries.iso2} value={countries.iso2}>{countries.name}</MuiMenuItem>
               ))
 
             }
