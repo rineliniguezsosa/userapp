@@ -5,7 +5,7 @@ import { Usuario, UsuarioRow } from "../../../../types/interfaces";
 import { MuiButton,MuiDataTable,MuiPaper,MuiTextField,MuiForm, MuiSelect,MuiMenuItem } from "../../../MuiComponents";
 import { columns, Generos} from "../../../../helpers";
 import { useForm } from "../../../../hooks";
-import { AllCountries } from '../../../../types'
+import { AllCountries,StateResponse } from '../../../../types'
 
 const getall = import.meta.env.VITE_GETALL;
 const api_key = import.meta.env.VITE_COUNTRYSTATE_APIKEY;
@@ -16,7 +16,7 @@ console.log(api_key);
 export const Home = () => {
   const [userdata, setUserData] = useState<Usuario[]>([])
   const [countries, setCountries] = useState<AllCountries[]>([]);
-  const [state] = useState([])
+  const [state,setstate] = useState<StateResponse[]>([])
   // const [updateform, setupdateform] = useState(false)
  console.log(state);
  
@@ -65,10 +65,8 @@ export const Home = () => {
       const { data } = await axios.get(`https://api.countrystatecity.in/v1/countries/${form.country}/states`,{
         headers:{'X-CSCAPI-KEY':api_key}
       })
-      console.log("mexico: ",data);
-      
-      // console.log(data);
-      // setstate(data)
+    
+      setstate(data)
     } catch (error) {
       console.log(error);
       
@@ -171,14 +169,30 @@ export const Home = () => {
               onChange={handleChange}            
               />
              */}
-            <MuiTextField
+            
+            <MuiSelect
+              labelId="select-state"
+              id="simple-select-state"
+              value={form.state}
+              label="Estado"
+              onChange={handleChange}
+              name="state"
+            >
+            {
+              state.map(state => (
+                <MuiMenuItem key={state.iso2} value={state.name}>{state.name}</MuiMenuItem>
+              ))
+
+            }
+            </MuiSelect>
+            {/* <MuiTextField
               id="state"
               label="Estado" 
               name="state"
               type="text"
               value={form.state}  
               onChange={handleChange}            
-              />
+              /> */}
             
               <MuiTextField
                 id="city"
