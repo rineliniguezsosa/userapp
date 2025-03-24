@@ -1,8 +1,9 @@
 import { Box, Modal } from "@mui/material"
 import { MuiModalProps } from "../../../types/interfaces"
+import { MuiButton } from "../MuiButton/MuiButton";
 
 
-export const MuiModal = ({open,onClose,children,...props}:MuiModalProps) => {
+export const MuiModal = ({title,loading,open,action,onClose,...props}:MuiModalProps) => {
     const style = {
         position: 'absolute',
         top: '50%',
@@ -19,7 +20,14 @@ export const MuiModal = ({open,onClose,children,...props}:MuiModalProps) => {
   return (
     <Modal open={open} onClose={onClose} {...props}>
         <Box sx={{...style}}>
-            {children}
+             <div>
+                  <h1>{title}</h1>
+            
+                  <div className='mt-5 flex justify-between'>
+                        <MuiButton loading={loading} onClick={action}  variant='contained' color='success' sizes='small'>Aceptar</MuiButton>
+                        <MuiButton onClick={onClose}  variant='contained' color='error' sizes='small'>Cancelar</MuiButton>
+                  </div>
+              </div>
         </Box>
     </Modal>
   )
