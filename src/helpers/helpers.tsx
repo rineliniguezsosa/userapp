@@ -80,16 +80,13 @@ export const columns: GridColDef[] = [
                   Eliminar
                 </MuiButton>
 
-                <MuiModal open={open} onClose={handleClose}>
-                    <div>
-                        <h1>¿Estás seguro de que deseas eliminar este registro? </h1>
-
-                        <div className='mt-5 flex justify-between'>
-                            <MuiButton loading={loading} onClick={deleteUser}  variant='contained' color='success' sizes='small'>Aceptar</MuiButton>
-                            <MuiButton onClick={handleClose}  variant='contained' color='error' sizes='small'>Cancelar</MuiButton>
-                        </div>
-                    </div>
-                </MuiModal>
+                <MuiModal 
+                  title='¿Estás seguro de que deseas eliminar este registro?'
+                  action={deleteUser}
+                  loading={loading}
+                  open={open}
+                  onClose={handleClose}
+                />
             </React.Fragment>
           );
         },
