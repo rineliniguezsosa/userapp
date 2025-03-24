@@ -9,6 +9,9 @@ export interface AllCountries {
     native:    null | string;
     emoji:     string;
 }
+
+export type StateResponse = Omit<AllCountries,"iso3"|"phonecode"|"capital"|"currency"|"native"|"emoji"> 
+
 export interface Restcountries {
     name:         Name;
     tld?:         string[];
