@@ -42,7 +42,9 @@ export interface MuiFormProps {
 export interface MuiModalProps {
     open:boolean,
     onClose:()=> void,
-    children:React.ReactNode
+    title:string,
+    loading:boolean,
+    action:() => void,
 }
 export interface MuiButtonProps {
     loading?:boolean,
